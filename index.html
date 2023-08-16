@@ -1,0 +1,20 @@
+<head>
+<title>文章'囲い</title>
+</head>
+<body>
+<form id="textForm">
+<textarea id="inputText" rows="5" cols="50"></textarea><br>
+<button type="button" onclick="wrapText()">囲う</button>
+</form>
+<div id="output"></div>
+<script>
+function wrapText() {
+const inputText = document.getElementById("inputText").value;
+const lines = inputText.split('\n');
+let outputHtml = "";
+lines.forEach(line => {
+if (line.trim() !== "") {
+outputHtml += "'" + line.trim() + "'<br>";}});
+document.getElementById("output").innerHTML = outputHtml;}
+</script>
+</body>
